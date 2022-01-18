@@ -1,4 +1,4 @@
-/*package jp.ac.uryukyu.ie.e205430;
+import jp.ac.uryukyu.ie.e205430.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,4 +18,4 @@ public class Main {
         }
         judge.finalResult();
     }
-}*/
+}
