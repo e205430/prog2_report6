@@ -8,9 +8,14 @@ public class Judge {
     Player player = new Player();
     Computer computer = new Computer("コンピュータ");
 
-    public void playGame(int computerHand,int HumanHand){
+    /**
+     * 相手と自分のじゃんけんの手を指定する。
+     * @param computerHand 相手のじゃんけんの手
+     * @param  humanHand 自分のじゃんけんの手
+     */
+    public void playGame(int computerHand,int humanHand){
         
-        judge = (computerHand - HumanHand + 3 ) % 3;
+        judge = (computerHand - humanHand + 3 ) % 3;
 
         if(judge == 0){
             System.out.println("あいこです。");

@@ -9,10 +9,18 @@ public class Computer implements Hand{
         this.name = "コンピュータ";
     }
 
+    /**
+     * 相手の名前を取得
+     * @return　相手の名前
+     */
     public String getName(){
         return name;
     }
 
+    /**
+     * 相手のじゃんけんの手を取得(1:グー、2:チョキ、3:パー)
+     * @return　相手のじゃんけんの手
+     */
     public int getHand(){
         return hand;
     }
