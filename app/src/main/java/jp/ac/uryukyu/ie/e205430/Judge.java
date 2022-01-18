@@ -4,6 +4,7 @@ public class Judge {
     int playerWin = 0;
     int playerLose = 0;
     int even = 0;
+    int judge;
     Player player = new Player();
     Computer computer = new Computer("コンピュータ");
 
@@ -17,14 +18,17 @@ public class Judge {
         if(humanHand == computerHand){
             System.out.println("あいこです。");
             even +=1;
+            judge = 0;
         }
         else if((humanHand == 1 && computerHand == 2) || (humanHand == 2 && computerHand == 3) ||(humanHand == 3 && computerHand == 1)){
             System.out.println(player.getName()+"の勝ちです。");
             playerWin += 1;
+            judge = 1;
         }
         else{
             System.out.println(player.getName()+"あなたの負けです。");
             playerLose += 1;
+            judge = 2;
         }
     }
 

@@ -3,7 +3,6 @@ package jp.ac.uryukyu.ie.e205430;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-
 public class JankenTest {
     @Test
     void judgeTest(){
@@ -12,9 +11,7 @@ public class JankenTest {
         int hHand = 1;
         Judge judge = new Judge();
 
-        judge.playGame(cHand, hHand);
+        judge.playGame(hHand, cHand);
         assertEquals(defaultJudge, judge.judge);
-
-
     }
 }
