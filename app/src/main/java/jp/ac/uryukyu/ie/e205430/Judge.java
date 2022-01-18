@@ -3,8 +3,7 @@ package jp.ac.uryukyu.ie.e205430;
 public class Judge {
     int playerWin = 0;
     int playerLose = 0;
-    int even;
-    int judge;
+    int even = 0;
     Player player = new Player();
     Computer computer = new Computer("コンピュータ");
 
@@ -13,24 +12,21 @@ public class Judge {
      * @param computerHand 相手のじゃんけんの手
      * @param  humanHand 自分のじゃんけんの手
      */
-    public void playGame(int computerHand,int humanHand){
+    public void playGame(int humanHand,int computerHand){
         
-        judge = (computerHand - humanHand + 3 ) % 3;
-
-        if(judge == 0){
+        if(humanHand == computerHand){
             System.out.println("あいこです。");
             even +=1;
         }
-        else if(judge == 1){
+        else if((humanHand == 1 && computerHand == 2) || (humanHand == 2 && computerHand == 3) ||(humanHand == 3 && computerHand == 1)){
             System.out.println(player.getName()+"の勝ちです。");
             playerWin += 1;
         }
-        else if(judge == 2){
+        else{
             System.out.println(player.getName()+"あなたの負けです。");
             playerLose += 1;
-            
         }
-        }
+    }
 
     public void finalResult(){
         System.out.println("最終結果:" + playerWin + "勝" + playerLose+"敗" + even+"引き分け");
