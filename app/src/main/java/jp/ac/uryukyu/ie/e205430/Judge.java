@@ -1,8 +1,8 @@
 package jp.ac.uryukyu.ie.e205430;
 
 public class Judge {
-    int playerWin = 1;
-    int playerLose = 1;
+    int playerWin = 0;
+    int playerLose = 0;
     int even;
     int judge;
     Player player = new Player();
