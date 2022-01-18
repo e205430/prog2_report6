@@ -3,27 +3,19 @@ package jp.ac.uryukyu.ie.e205430;
 public class Main {
     public static void main(String[] args) {
         
-        Hand h = new Hand();
-        Player p = new Player();
-        Computer c = new Computer();
-        h.showHandList();
-        p.selectHand();
-        c.computerHand();
+        Player player = new Player();
+        Computer computer = new Computer("コンピュータ");
+        Judge judge = new Judge();
+        player.showHandList();
+    
+        for (int i = 1; i <= 3; i++){
+            System.out.println(i+"回戦目");
+            System.out.println(player.getName()+ "が出すじゃんけんの手を選んでください。");
+            player.selectHand();
+            computer.selectHand();
 
-        if(p.input == c.hand){
-            System.out.println("あいこです。");
+            judge.playGame(player.getHand(), computer.getHand());
         }
-        else if(p.input == 1 && c.hand == 2){
-            System.out.println("あなたの勝ちです。");
-        }
-        else if(p.input == 2 && c.hand == 3){
-            System.out.println("あなたの勝ちです。");
-        }
-        else if(p.input == 3 && c.hand == 1){
-            System.out.println("あなたの勝ちです。");
-        }
-        else{
-            System.out.println("あなたの負けです。");
-        }
+        judge.finalResult();
     }
 }
